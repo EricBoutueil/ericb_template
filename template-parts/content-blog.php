@@ -1,5 +1,5 @@
-<h1><?php the_title(); ?></h1>
-<?php The_post_thumbnail('medium'); ?>
+<h1><a href="<?php the_permalink(); ?> "> <?php the_title(); ?></a></h1>
+<?php The_post_thumbnail('blog-thumbnail'); ?>
 <br/>
 <em>Posted on - <?php echo get_the_date(); ?></em>
 <br/>

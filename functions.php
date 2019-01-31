@@ -83,6 +83,9 @@ if ( ! function_exists( 'ericb_template_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'ericb_template_setup' );
 
+/* Custom image sizes */
+add_image_size('blog-thumbnail', 500, 250, true);
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
