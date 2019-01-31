@@ -86,6 +86,19 @@ add_action( 'after_setup_theme', 'ericb_template_setup' );
 /* Custom image sizes */
 add_image_size('blog-thumbnail', 500, 250, true);
 
+/* Customize read more links */
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Read More', 'textdomain' )
+        );
+    }
+
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
