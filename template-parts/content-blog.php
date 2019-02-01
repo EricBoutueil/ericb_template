@@ -14,10 +14,11 @@
     while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
       <div class="single-post"> <!-- col-2-items -->
         <div>
-          <h1 class="post-title"><a href="<?php the_permalink(); ?> "> <?php the_title(); ?></a></h1>
-          <div class="featured-image">
+          <h1 class="post-title"><a href="<?php the_permalink(); ?> ">
+            <?php the_title(); ?></a></h1>
+          <div class="featured-image"><a href="<?php the_permalink(); ?> ">
             <?php The_post_thumbnail('blog-thumbnail'); ?>
-            <span class="image-overlay"></span>
+            <span class="image-overlay"></span></a>
           </div>
           <div class="post-meta">
             <em>Posted on - <?php echo get_the_date(); ?></em>
