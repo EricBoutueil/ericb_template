@@ -12,7 +12,7 @@
 <div id="blog-articles" class="blog-wrapper"> <!-- col-2-items -->
   <?php if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="single-post"> <!-- col-2-items -->
+      <div class="single-post-summary"> <!-- col-2-items -->
         <div>
           <h1 class="post-title"><a href="<?php the_permalink(); ?> ">
             <?php the_title(); ?></a></h1>
