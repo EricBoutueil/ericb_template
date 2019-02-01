@@ -89,7 +89,7 @@ add_image_size('blog-thumbnail', 500, 250, true);
 /* Customize read more links */
 function wpdocs_excerpt_more( $more ) {
     if ( ! is_single() ) {
-        $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+        $more = sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
             get_permalink( get_the_ID() ),
             __( 'Read More', 'textdomain' )
         );

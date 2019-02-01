@@ -30,8 +30,7 @@ get_header();
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+
 
 				/*
 				 * Include the Post-Type-specific template for the content.
@@ -40,9 +39,8 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', 'blog' );
 
-			endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
 
 		else :
 
