@@ -650,7 +650,7 @@ a:hover, a:active {
   /*overflow:  auto;*/
 }
 
-.single-post-summary {
+.single-post-on-blog {
   width: calc(50% - 2rem);
   margin-top: 10px;
 }
@@ -684,12 +684,12 @@ a:hover, a:active {
   color:#fff;
 }
 
-.featured-image {
+.featured-image-blog {
   transition: .8s;
   position: relative;
 }
 
-.featured-image:hover {
+.featured-image-blog:hover {
   transform: scale(1.1);
 }
 

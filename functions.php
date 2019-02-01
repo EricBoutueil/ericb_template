@@ -84,7 +84,8 @@ endif;
 add_action( 'after_setup_theme', 'ericb_template_setup' );
 
 /* Custom image sizes */
-add_image_size('blog-thumbnail', 500, 250, true);
+add_image_size('blog-thumbnail', 600, 300, true);
+add_image_size('post-thumbnail', 1200, 100, true);
 
 /* Customize read more links */
 function wpdocs_excerpt_more( $more ) {

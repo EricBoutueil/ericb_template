@@ -11,25 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				ericb_template_posted_on();
-				ericb_template_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<h1 class="single-post-title"><?php the_title(); ?></h1>
+    <div class="featured-image">
+      <?php the_post_thumbnail('post-thumbnail'); ?>
+    </div>
 	</header><!-- .entry-header -->
-
-	<?php ericb_template_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -54,6 +40,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php ericb_template_entry_footer(); ?>
+		<h3>Category - <?php the_category(); ?></h3>
+    <?php the_tags(); ?>
+    <!-- <?php ericb_template_entry_footer(); ?> -->
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

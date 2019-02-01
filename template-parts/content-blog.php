@@ -12,12 +12,12 @@
 <div id="blog-articles" class="blog-wrapper"> <!-- col-2-items -->
   <?php if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="single-post-summary"> <!-- col-2-items -->
+      <div class="single-post-on-blog"> <!-- col-2-items -->
         <div>
           <h1 class="post-title"><a href="<?php the_permalink(); ?> ">
             <?php the_title(); ?></a></h1>
-          <div class="featured-image"><a href="<?php the_permalink(); ?> ">
-            <?php The_post_thumbnail('blog-thumbnail'); ?>
+          <div class="featured-image featured-image-blog"><a href="<?php the_permalink(); ?> ">
+            <?php the_post_thumbnail('blog-thumbnail'); ?>
             <span class="image-overlay"></span></a>
           </div>
           <div class="post-meta">
