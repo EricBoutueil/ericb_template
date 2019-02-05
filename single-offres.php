@@ -28,5 +28,6 @@
   </div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+dynamic_sidebar('sample-sidebar-1');
+get_sidebar('test');
+get_footer();?>

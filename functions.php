@@ -141,10 +141,10 @@ function ericb_template_widgets_init() {
     'name'          => esc_html__( 'Sample-sidebar', 'ericb_template' ),
     'id'            => 'sample-sidebar-1',
     'description'   => esc_html__( 'This is a sample sidebar available from widget menu.', 'ericb_template' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'before_widget' => '<section id="sample-id" class="widget text-class">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
+    'before_title'  => '<h3 class="widget-sample-title">',
+    'after_title'   => '</h3>',
   ) );
 }
 add_action( 'widgets_init', 'ericb_template_widgets_init' );
