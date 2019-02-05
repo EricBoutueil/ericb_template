@@ -690,7 +690,7 @@ a:hover, a:active {
 }
 
 .featured-image-blog:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .featured-image img {
