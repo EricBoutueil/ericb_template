@@ -615,15 +615,16 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #00D1EB;
+  text-decoration: none;
 }
 
 a:visited {
-	color: purple;
+	color: #00D1EB;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #00D1EB;
 }
 
 a:focus {
@@ -632,6 +633,97 @@ a:focus {
 
 a:hover, a:active {
 	outline: 0;
+}
+
+/* Custom CSS */
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-wrapper {
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  /*overflow:  auto;*/
+}
+
+.single-post-on-blog {
+  width: calc(50% - 2rem);
+  margin-top: 10px;
+}
+
+#blog-articles h1 {
+ font-size: 20px;
+ /*white-space: nowrap;*/
+ /*overflow: hidden;*/
+ /*text-overflow: ellipsis;*/
+}
+
+.post-meta {
+  margin:10px 0;
+}
+
+#blog-articles p {
+  margin:10px 0;
+}
+
+.read-more {
+  background-color: #00d1eb;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.read-more:visited,
+.read-more:hover {
+  color:#fff;
+}
+
+.featured-image-blog {
+  transition: .8s;
+  position: relative;
+}
+
+.featured-image-blog:hover {
+  transform: scale(1.03);
+}
+
+.featured-image img {
+  width: 100%;
+}
+
+.image-overlay {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 7px;
+  left: 0;
+  background: rgba(0,0,0, .5);
+  opacity: 0;
+  transition: opacity 1.2s;
+
+}
+
+.image-overlay:hover {
+  opacity:1;
+}
+
+.post-categories {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.post-categories li {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
 }
 
 /*--------------------------------------------------------------
