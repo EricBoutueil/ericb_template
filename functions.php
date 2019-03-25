@@ -43,9 +43,12 @@ if ( ! function_exists( 'ericb_template_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'ericb_template' ),
-		) );
+    register_nav_menus( array(
+      'menu-1' => esc_html__( 'Primary', 'ericb_template' ),
+      'header_top_black_menu' => __('Header Top Black Menu', 'ericb_template'),
+      'header_login_menu' => __('Header Login Menu', 'ericb_template'),
+      'header_services_menu' => __('Header Services Menu', 'ericb_template')
+    ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -146,6 +149,38 @@ function ericb_template_widgets_init() {
     'before_title'  => '<h3 class="widget-sample-title">',
     'after_title'   => '</h3>',
   ) );
+
+  register_sidebar(array(
+      'name' => 'Top Footer',
+      'id' => 'top-footer',
+      'description' => 'Widgets in this area will be shown in the footer.',
+      'before_widget' => '<div class="footer-widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+  ));
+
+
+  register_sidebar(array(
+      'name' => 'Middle Footer',
+      'id' => 'middle-footer',
+      'description' => 'Widgets in this area will be shown in the footer.',
+      'before_widget' => '<div class="footer-widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+  ));
+
+
+  register_sidebar(array(
+      'name' => 'Bottom Footer',
+      'id' => 'bottom-footer',
+      'description' => 'Widgets in this area will be shown in the footer.',
+      'before_widget' => '<div class="footer-widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+  ));
 }
 add_action( 'widgets_init', 'ericb_template_widgets_init' );
 
@@ -162,6 +197,16 @@ function ericb_template_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+  global $smof_data;
+
+  if(!isset($smof_data['responsive_enabled'])) {
+    wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
+  } else {
+    if(isset($smof_data['responsive_enabled']) && ($smof_data['responsive_enabled'] =='1')) {
+      wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
+    }
+  }
 }
 add_action( 'wp_enqueue_scripts', 'ericb_template_scripts' );
 
@@ -191,4 +236,28 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/*******************************************************************/
+
+// Add Open Sans Google Font
+function wpb_add_google_fonts() {
+
+wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700', false );
+}
+
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+/* Add bootstrap support to the Wordpress theme*/
+
+function theme_add_bootstrap() {
+  wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+  wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
+  wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.3.1', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
+
+
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
